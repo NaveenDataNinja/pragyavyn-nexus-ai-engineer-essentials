@@ -1,0 +1,324 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f6f2">
+  <meta name="description" content="Pragyavyn Nexus by Naveen Narasapuram: hands-on AI engineer essentials, from Python to AI, with lessons, visuals and assessments.">
+  <title>Pragyavyn Nexus | AI Engineer Essentials</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="lesson-materials.js" defer></script>
+  <script src="lesson-enrichments.js" defer></script>
+  <script src="lesson-deep-dives.js" defer></script>
+  <script src="app.js" defer></script>
+  <script src="firebase-config.js" defer></script>
+  <script src="learner-account.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Pragyavyn Nexus by Naveen Narasapuram home">
+      <span class="brand-mark" aria-hidden="true">NN</span>
+      <span class="brand-text"><span>Naveen Narasapuram</span><small>Pragyavyn Nexus</small></span>
+    </a>
+    <nav class="top-links" aria-label="Main navigation">
+      <a href="#roadmap">Learning path</a>
+      <a href="#projects">Projects</a>
+      <a href="#how-it-works">How it works</a>
+      <button class="share-button preference-button" id="theme-button" type="button" aria-pressed="false"><span id="theme-icon" aria-hidden="true">☾</span> <span id="theme-label">Dark mode</span></button>
+      <button class="share-button preference-button" id="settings-button" type="button"><span class="settings-short" aria-hidden="true">⚙</span><span class="settings-full">Personalize</span></button>
+      <button class="share-button" id="share-button" type="button">Share Nexus <span aria-hidden="true">↗</span></button>
+      <button class="share-button account-button" id="account-button" type="button" aria-label="Learner account"><span aria-hidden="true">◉</span> <span id="account-label">Sign in</span></button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="live-dot"></span> PRAGYAVYN NEXUS · AI ENGINEER ESSENTIALS</p>
+        <h1>From first line<br>to <span>AI engineer.</span></h1>
+        <p class="hero-description">A clear, hands-on path through Python, SQL, data, machine learning and AI. Made for a curious beginner and a busy BTech timetable.</p>
+        <a class="primary-button" href="#roadmap">Explore your learning path <span aria-hidden="true">↓</span></a>
+        <div class="hero-note"><span class="note-icon" aria-hidden="true">✳</span> Start with zero coding experience. Build real projects as you go.</div>
+      </div>
+      <div class="hero-art" aria-label="Illustration of the learning path">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="art-center"><span>01</span><strong>learn<br>by making</strong></div>
+        <div class="art-node node-python"><span class="node-icon">Py</span><span>Python</span></div>
+        <div class="art-node node-sql"><span class="node-icon">⌘</span><span>SQL</span></div>
+        <div class="art-node node-ml"><span class="node-icon">✳</span><span>Machine learning</span></div>
+        <div class="art-node node-ai"><span class="node-icon">✦</span><span>AI engineering</span></div>
+        <span class="art-spark spark-one">✳</span>
+        <span class="art-spark spark-two">✦</span>
+      </div>
+    </section>
+
+    <section class="overview" aria-label="Course overview">
+      <div class="overview-item"><span class="overview-icon">◷</span><div><strong id="course-duration">24 weeks</strong><span id="weekly-hours-caption">at about 8 hours / week</span></div></div>
+      <div class="overview-item"><span class="overview-icon">▤</span><div><strong>9 learning tracks</strong><span>beginner foundations to AI</span></div></div>
+      <div class="overview-item"><span class="overview-icon">⌁</span><div><strong>192 guided hours</strong><span>plus practice at your pace</span></div></div>
+      <div class="overview-item"><span class="overview-icon">◎</span><div><strong>Build a portfolio</strong><span>projects in every stage</span></div></div>
+    </section>
+
+    <section class="progress-section" aria-label="Your learning progress">
+      <div class="progress-heading">
+        <div><p class="eyebrow">YOUR LEARNING JOURNAL</p><h2>Small steps add up.</h2></div>
+        <span class="saved-label"><span class="live-dot"></span> Saved on this device</span>
+      </div>
+      <div class="progress-grid">
+        <article class="progress-card progress-main">
+          <div class="progress-card-top"><span>LEARNING PROGRESS</span><span id="completion-label">0% complete</span></div>
+          <div class="progress-track"><div class="progress-fill" id="completion-bar"></div></div>
+          <div class="progress-foot"><span id="module-count">0 of 38 modules</span><span>Keep your own pace <span aria-hidden="true">↗</span></span></div>
+        </article>
+        <article class="progress-card time-card">
+          <div class="progress-card-top"><span>STUDY TIME</span><span class="clock-icon">◷</span></div>
+          <strong class="time-display" id="time-display">00:00:00</strong>
+          <div class="timer-controls">
+            <span id="timer-status" aria-live="polite">Ready when you are</span>
+            <button type="button" class="timer-button" id="timer-button" disabled>Start a module</button>
+          </div>
+        </article>
+      </div>
+      <p class="privacy-note"><span aria-hidden="true">🔒</span> Guests keep progress in this browser. If you choose Google sign-in, your name, email and learning activity are shared with the academy owner as described before sign-in.</p>
+    </section>
+
+    <section class="roadmap-section" id="roadmap">
+      <div class="roadmap-heading">
+        <div><p class="eyebrow">THE LEARNING PATH</p><h2>One idea at a time.</h2></div>
+        <p>Follow the tracks in order, or explore what interests you. Each module has a hands-on outcome to help make the ideas stick.</p>
+      </div>
+      <div class="roadmap-tools">
+        <div class="filter-list" id="filter-list" aria-label="Filter modules by track"></div>
+        <label class="search-box"><span aria-hidden="true">⌕</span><input id="search-input" type="search" placeholder="Find a topic..." aria-label="Find a topic"></label>
+      </div>
+      <div class="track-list" id="track-list"></div>
+      <p class="no-results" id="no-results" hidden>No modules found. Try a different topic or track.</p>
+    </section>
+
+    <section class="projects-section" id="projects" aria-labelledby="projects-title">
+      <div class="roadmap-heading">
+        <div><p class="eyebrow">THE NEXUS PROJECT STUDIO</p><h2 id="projects-title">Learn it. Build it. Explain it.</h2></div>
+        <p>Five guided briefs turn the lessons into portfolio practice. Work in order or choose a project after its prerequisites.</p>
+      </div>
+      <div class="project-grid">
+        <details class="project-card">
+          <summary><span class="project-number">01 / PYTHON</span><strong>Build a study planner</strong><span>Variables, collections, files and testing</span></summary>
+          <div class="project-body">
+            <p><strong>Goal:</strong> Create a command-line planner that records tasks and reports what remains.</p>
+            <p><strong>Start:</strong> Complete Python foundations. Install Python and create a folder for this project; the website does not run your code.</p>
+            <ol><li>Represent each task with a title, estimated minutes and completion status. Start with three fictional tasks.</li><li>Write functions to add a task, mark one done and list remaining tasks. Keep the menu separate from these functions.</li><li>Save and load tasks as JSON with the Python standard library. Handle a missing file as a new planner and show an error for invalid data.</li><li>Add tests using <code>unittest</code>. Run them and explain any failure before changing the code.</li></ol>
+            <p><strong>Starter:</strong> Save this as <code>planner.py</code>, then run <code>python planner.py</code>. Extend it with a menu and JSON persistence.</p>
+            <pre class="project-code"><code>def add_task(tasks, title, minutes):
+    if not title.strip() or minutes &lt;= 0:
+        raise ValueError("Provide a title and positive minutes")
+    tasks.append({"title": title, "minutes": minutes, "done": False})
+
+def remaining(tasks):
+    return sum(1 for task in tasks if not task["done"])
+
+if __name__ == "__main__":
+    tasks = []
+    add_task(tasks, "Practice Python", 30)
+    add_task(tasks, "Review SQL", 20)
+    tasks[0]["done"] = True
+    print(f"Tasks remaining: {remaining(tasks)}")  # 1</code></pre>
+            <p><strong>Check:</strong> An empty task list has zero remaining tasks; completing a task changes the count; saved tasks survive a restart; an invalid index does not change a task.</p>
+            <p><strong>Deliver:</strong> Your source, tests and a README with setup steps, example output and one limitation.</p>
+          </div>
+        </details>
+        <details class="project-card">
+          <summary><span class="project-number">02 / SQL &amp; DATA</span><strong>Explore a learning dataset</strong><span>Tables, joins and clear questions</span></summary>
+          <div class="project-body">
+            <p><strong>Goal:</strong> Use SQLite to answer questions about fictional learners and course enrollments.</p>
+            <p><strong>Start:</strong> Complete the SQL tracks. Python includes SQLite through <code>sqlite3</code>; use synthetic names only.</p>
+            <ol><li>Create <code>learners(id, name)</code>, <code>courses(id, title)</code> and <code>enrollments(learner_id, course_id, completed)</code> tables. Define primary and foreign keys.</li><li>Insert at least three learners, two courses and four enrollments. Include a learner with no enrollment.</li><li>Use joins to list enrollments and a left join to retain learners with no course. Calculate course enrollment and completion counts.</li><li>Use placeholders for user-supplied values, then write down what the numbers cannot tell you.</li></ol>
+            <p><strong>Starter:</strong> Run these statements in a SQLite tool or through Python's <code>sqlite3</code>. Add the courses table, constraints and more rows next.</p>
+            <pre class="project-code"><code>CREATE TABLE learners (id INTEGER PRIMARY KEY, name TEXT NOT NULL);
+CREATE TABLE enrollments (learner_id INTEGER, course TEXT);
+INSERT INTO learners VALUES (1, 'Asha'), (2, 'Ben');
+INSERT INTO enrollments VALUES (1, 'Python');
+SELECT learners.name, COUNT(enrollments.course) AS course_count
+FROM learners LEFT JOIN enrollments
+  ON learners.id = enrollments.learner_id
+GROUP BY learners.id, learners.name
+ORDER BY learners.id;
+-- Expected: Asha | 1, Ben | 0</code></pre>
+            <p><strong>Check:</strong> A learner with no course still appears in the left join; an empty course has a count of zero; duplicate or invalid keys are rejected when foreign keys are enabled.</p>
+            <p><strong>Deliver:</strong> A reproducible setup script, three queries, expected results and a short findings note.</p>
+          </div>
+        </details>
+        <details class="project-card">
+          <summary><span class="project-number">03 / MACHINE LEARNING</span><strong>Compare a prediction baseline</strong><span>Splits, metrics and honest evaluation</span></summary>
+          <div class="project-body">
+            <p><strong>Goal:</strong> Compare a simple classifier with a baseline on a public, non-sensitive dataset.</p>
+            <p><strong>Start:</strong> Complete the machine learning track. This optional project needs Python, scikit-learn and its dependencies installed separately.</p>
+            <ol><li>Load scikit-learn's built-in Iris dataset and describe the features and labels. Do not treat it as a medical tool.</li><li>Make a reproducible train/test split before fitting anything. Keep the test data untouched until evaluation.</li><li>Fit a <code>DummyClassifier</code> and a logistic-regression pipeline with scaling. Fit preprocessing on the training data only.</li><li>Report accuracy and a confusion matrix for both models. Inspect mistakes and explain the small dataset's limits.</li></ol>
+            <p><strong>Starter:</strong> After installing scikit-learn in your own Python environment, save and run this script. Add a confusion matrix and error review.</p>
+            <pre class="project-code"><code>from sklearn.datasets import load_iris
+from sklearn.dummy import DummyClassifier
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import StandardScaler
+
+X, y = load_iris(return_X_y=True)
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.3, random_state=42, stratify=y
+)
+models = {
+    "baseline": DummyClassifier(strategy="most_frequent"),
+    "logistic": make_pipeline(StandardScaler(), LogisticRegression()),
+}
+for name, model in models.items():
+    model.fit(X_train, y_train)
+    print(name, "accuracy:", round(model.score(X_test, y_test), 3))</code></pre>
+            <p><strong>Check:</strong> Both models use the same test split; the baseline is reported; changing a test label never changes the trained model; the evaluation is reproducible with a fixed seed.</p>
+            <p><strong>Deliver:</strong> A script or notebook, instructions, results and an explanation of leakage and limitations.</p>
+          </div>
+        </details>
+        <details class="project-card">
+          <summary><span class="project-number">04 / GENERATIVE AI &amp; AGENTS</span><strong>Design a grounded notes assistant</strong><span>Retrieval, evidence and safe workflows</span></summary>
+          <div class="project-body">
+            <p><strong>Goal:</strong> Build a small retrieval prototype over fictional notes, then design a safe agent workflow around it.</p>
+            <p><strong>Start:</strong> Complete the generative AI track. Begin without an external model, account or sensitive data.</p>
+            <ol><li>Write five short fictional notes with unique IDs. Normalize text and compare query words with each note.</li><li>Return the highest-overlap notes with their IDs. If no words overlap, return “no supporting note” instead of inventing an answer.</li><li>Make an evaluation set with at least five questions, expected note IDs and one unanswerable question. Record missed retrievals.</li><li>Draw an agent loop: request, permitted retrieval tool, evidence review and answer. Require human approval before any action that changes data; treat retrieved text as untrusted input.</li></ol>
+            <p><strong>Starter:</strong> Run this local Python example, then add notes, evaluation cases and a better tokenizer. It retrieves notes; it does not generate an answer.</p>
+            <pre class="project-code"><code>import re
+
+notes = {"n1": "Python uses indentation", "n2": "SQL joins tables"}
+
+def words(text):
+    return set(re.findall(r"[a-z0-9]+", text.lower()))
+
+def retrieve(query):
+    query_words = words(query)
+    matches = [(len(query_words &amp; words(text)), note_id)
+               for note_id, text in notes.items()]
+    return [note_id for score, note_id in sorted(matches, reverse=True)
+            if score &gt; 0]
+
+print(retrieve("python indentation"))  # ['n1']
+print(retrieve("weather"))             # []</code></pre>
+            <p><strong>Check:</strong> An empty or unrelated query returns no supporting note; every returned note has an ID; the evaluation reports failures. Word matching is not semantic search and the design is not a running agent.</p>
+            <p><strong>Deliver:</strong> Code, fictional notes, evaluation cases, results and a diagram of the proposed workflow.</p>
+          </div>
+        </details>
+        <details class="project-card">
+          <summary><span class="project-number">05 / CAREER</span><strong>Present your work responsibly</strong><span>Portfolio, reflection and communication</span></summary>
+          <div class="project-body">
+            <p><strong>Goal:</strong> Turn one completed project into a clear, verifiable portfolio entry.</p>
+            <ol><li>State the problem, intended user and success criterion. Separate the original goal from what actually works.</li><li>Show the architecture, setup, example input and output, tests and evaluation results. Link to code you are allowed to share.</li><li>Document privacy, limitations, failures and the next improvement. Remove personal data and secrets.</li><li>Prepare a two-minute explanation and answer: “What would you change if this had real users?”</li></ol>
+            <p><strong>Starter outline:</strong> Fill each line with evidence from a project you actually built.</p>
+            <pre class="project-code"><code>Problem and intended user:
+What I built:
+How to run it:
+Example input and observed output:
+Tests and evaluation results:
+Limitations and privacy considerations:
+Next improvement:</code></pre>
+            <p><strong>Check:</strong> A new reader can run the project from the README; claims match the observed results; the README distinguishes implemented functionality from future ideas.</p>
+            <p><strong>Deliver:</strong> A repository, a short write-up and a demo using fictional data.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section class="schedule-section" id="how-it-works">
+      <div class="schedule-copy">
+        <p class="eyebrow">A STUDENT-FRIENDLY RHYTHM</p>
+        <h2>Make room for<br>learning, not cramming.</h2>
+        <p>Plan for around <span id="schedule-hours">8 hours</span> a week alongside college. A mix of short lessons and hands-on practice is more useful than trying to finish everything in one go.</p>
+      </div>
+      <div class="week-card">
+        <div class="week-card-header"><span>YOUR WEEK, AT A GLANCE</span><span id="weekly-plan-hours">~ 8 HRS</span></div>
+        <div class="week-row"><span class="week-day">01</span><span class="week-detail"><strong>Learn the idea</strong><small>Watch or read, then take notes</small></span><span class="week-time" data-hours-share="0.25">2 hrs</span></div>
+        <div class="week-row"><span class="week-day">02</span><span class="week-detail"><strong>Code along</strong><small>Re-create examples yourself</small></span><span class="week-time" data-hours-share="0.25">2 hrs</span></div>
+        <div class="week-row"><span class="week-day">03</span><span class="week-detail"><strong>Build and practice</strong><small>Solve exercises or make a feature</small></span><span class="week-time" data-hours-share="0.375">3 hrs</span></div>
+        <div class="week-row"><span class="week-day">04</span><span class="week-detail"><strong>Review your learning</strong><small>Write down what clicked</small></span><span class="week-time" data-hours-share="0.125">1 hr</span></div>
+        <p class="schedule-tip"><span aria-hidden="true">✳</span> Exams week? Pause the timer and pick up where you left off.</p>
+      </div>
+    </section>
+
+    <section class="next-section">
+      <span class="next-icon" aria-hidden="true">✳</span>
+      <p class="eyebrow">YOUR FUTURE IS BUILT IN SMALL REPS</p>
+      <h2>You don't need to know everything.<br><span>You just need to begin.</span></h2>
+      <a href="#roadmap" class="text-link">Start with the first track <span aria-hidden="true">↑</span></a>
+    </section>
+  </main>
+
+  <dialog class="lesson-dialog" id="lesson-dialog" aria-labelledby="lesson-title">
+    <div class="dialog-shell lesson-shell">
+      <div class="dialog-topline"><span id="lesson-track-label"></span><button class="dialog-close" type="button" data-close-lesson aria-label="Close lesson">×</button></div>
+      <div class="lesson-content" id="lesson-content"></div>
+      <div class="lesson-navigation"><button class="lesson-nav-button" type="button" id="lesson-previous">← Previous lesson</button><span id="lesson-position"></span><button class="lesson-nav-button" type="button" id="lesson-next">Next lesson →</button></div>
+    </div>
+  </dialog>
+
+  <dialog class="assessment-dialog" id="assessment-dialog" aria-labelledby="assessment-title">
+    <div class="dialog-shell assessment-shell">
+      <div class="dialog-topline"><span id="assessment-track-label">QUICK CHECK</span><button class="dialog-close" type="button" data-close-assessment aria-label="Close assessment">×</button></div>
+      <div id="assessment-body"></div>
+    </div>
+  </dialog>
+
+  <dialog class="settings-dialog" id="settings-dialog" aria-labelledby="settings-title">
+    <form class="settings-shell" id="settings-form">
+      <div class="dialog-topline"><span>YOUR LEARNING SPACE</span><button class="dialog-close" type="button" data-close-settings aria-label="Close settings">×</button></div>
+      <div class="settings-content">
+        <p class="eyebrow">MAKE IT YOURS</p>
+        <h2 id="settings-title">Set up your study space.</h2>
+        <p class="settings-intro">Choose a pace and reading style that works for you. Your choices are saved in this browser.</p>
+        <label class="setting-field" for="weekly-hours-select"><span><strong>Study hours each week</strong><small>We'll estimate a course pace to match.</small></span>
+          <select id="weekly-hours-select" name="weeklyHours">
+            <option value="4">4 hours / week</option>
+            <option value="6">6 hours / week</option>
+            <option value="8" selected>8 hours / week</option>
+            <option value="10">10 hours / week</option>
+            <option value="12">12 hours / week</option>
+          </select>
+        </label>
+        <label class="setting-field" for="reading-size-select"><span><strong>Lesson text size</strong><small>Choose the reading size that feels comfortable.</small></span>
+          <select id="reading-size-select" name="readingSize">
+            <option value="normal">Comfortable</option>
+            <option value="large">Larger text</option>
+          </select>
+        </label>
+        <fieldset class="accent-setting">
+          <legend>Accent color</legend>
+          <label><input type="radio" name="accent" value="sage"><span class="accent-swatch sage-swatch"></span><span>Sage</span></label>
+          <label><input type="radio" name="accent" value="ocean"><span class="accent-swatch ocean-swatch"></span><span>Ocean</span></label>
+          <label><input type="radio" name="accent" value="plum"><span class="accent-swatch plum-swatch"></span><span>Plum</span></label>
+        </fieldset>
+      </div>
+      <div class="settings-actions"><button type="button" class="settings-cancel" data-close-settings>Cancel</button><button type="submit" class="settings-save">Save my preferences</button></div>
+    </form>
+  </dialog>
+
+  <dialog class="account-dialog" id="account-dialog" aria-labelledby="account-title">
+    <div class="account-content">
+      <div class="account-heading"><p class="eyebrow">YOUR LEARNING IDENTITY</p><button class="dialog-close" id="close-account" type="button" aria-label="Close account">×</button></div>
+      <h2 id="account-title">Learn as yourself.</h2>
+      <p id="account-description">Google sign-in is optional. Guests can use the entire learning path without an account.</p>
+      <div id="account-guest">
+        <p>Signing in shares your Google name and email, your current browser's completed lessons, assessment results, study time and last active time with the academy owner through Firebase. Progress is not synchronized between devices; a later report can replace an earlier one. Anyone using this browser may have contributed to its local progress. You can delete your reported activity from this account menu. Your Firebase sign-in account is separate; ask the owner to remove it if needed.</p>
+        <label class="account-consent"><input type="checkbox" id="account-consent"> <span>I understand and agree to share this information.</span></label>
+        <button class="account-primary" id="google-sign-in" type="button" disabled>Continue with Google</button>
+      </div>
+      <div id="account-signed-in" hidden>
+        <p id="account-identity"></p>
+        <p>Learning activity is reported from this browser while you are signed in. Signing out stops future reporting; previously reported information remains with the owner unless you delete it.</p>
+        <button class="account-primary" id="google-sign-out" type="button">Sign out</button>
+        <button class="account-share" id="delete-report" type="button">Delete my reported activity</button>
+      </div>
+      <button class="account-share" id="account-share" type="button">Share Pragyavyn Nexus</button>
+      <p class="account-status" id="account-status" role="status" aria-live="polite"></p>
+    </div>
+  </dialog>
+
+  <footer class="footer"><a class="brand footer-brand" href="#"><span class="brand-mark" aria-hidden="true">NN</span><span class="brand-text"><span>Naveen Narasapuram</span><small>Pragyavyn Nexus</small></span></a><span>AI Engineer Essentials · Learn, build, and keep going.</span></footer>
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top">↑</button>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

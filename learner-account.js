@@ -12,6 +12,7 @@
   const status = document.getElementById("account-status");
   const consentKey = "pragyavyn-nexus-reporting-consent";
   const config = window.NEXUS_FIREBASE_CONFIG;
+  const configured = Boolean(config && config.apiKey && config.authDomain && config.projectId && config.appId);
   let auth;
   let db;
   let firebaseAuth;
@@ -171,7 +172,7 @@
   }, 60000);
 
   async function initialize() {
-    if (!config || !config.apiKey || !config.authDomain || !config.projectId || !config.appId) {
+    if (!configured) {
       setStatus("Google sign-in is not configured yet. You can continue as a guest.");
       return;
     }
@@ -213,6 +214,8 @@
     }
   }
 
+  accountButton.hidden = !configured;
+  document.documentElement.dataset.accounts = configured ? "enabled" : "disabled";
   renderAccount();
   initialize();
 })();

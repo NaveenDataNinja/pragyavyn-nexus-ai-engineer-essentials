@@ -54,7 +54,7 @@ async function setup(configured) {
     "firebase-firestore.js": firestoreModule
   };
   const context = vm.createContext({
-    document: { getElementById: element },
+    document: { getElementById: element, documentElement: { dataset: {} } },
     location: { protocol: "https:" },
     localStorage: {
       getItem: key => storage.get(key) || null,
@@ -99,6 +99,7 @@ async function setup(configured) {
 
 (async () => {
   const guest = await setup(false);
+  assert.equal(guest.element("account-button").hidden, true);
   assert.match(guest.element("account-status").textContent, /not configured/);
   guest.element("account-consent").checked = true;
   guest.element("account-consent").listeners.change();
@@ -106,6 +107,7 @@ async function setup(configured) {
   assert.equal(guest.writes.length, 0);
 
   const app = await setup(true);
+  assert.equal(app.element("account-button").hidden, false);
   app.element("account-consent").checked = true;
   app.element("account-consent").listeners.change();
   assert.equal(app.element("google-sign-in").disabled, false);

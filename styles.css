@@ -710,6 +710,7 @@ body {
 .project-code { overflow-x: auto; margin: 14px 0; padding: 14px; border-radius: 10px; background: #282237; color: #f5eefb; font: 12px/1.6 var(--mono); white-space: pre; }
 .project-code code { overflow-wrap: normal; }
 .account-button { display: inline-flex; align-items: center; gap: 6px; max-width: 150px; flex-shrink: 0; }
+.account-button[hidden] { display: none; }
 #account-label { display: inline-block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .account-dialog { width: min(510px, calc(100% - 32px)); max-height: calc(100% - 32px); padding: 0; border: 0; border-radius: 20px; color: #2f2443; background: #fff; box-shadow: 0 25px 70px rgba(26, 17, 43, .28); }
 .account-dialog::backdrop { background: rgba(27, 18, 42, .56); }
@@ -738,7 +739,7 @@ html[data-theme="dark"] .project-number, html[data-theme="dark"] .project-card s
   .projects-section { padding-bottom: 55px; }
 }
 @media (max-width: 420px) {
-  .top-links #share-button { display: none; }
+  html[data-accounts="enabled"] .top-links #share-button { display: none; }
   .account-button { max-width: 85px; min-height: 44px; padding: 8px; font-size: 11px; }
   .account-content { padding: 20px; }
 }
